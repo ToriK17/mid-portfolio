@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <title><%= content_for?(:title) ? "#{yield(:title)} | Tori Kafati" : "Tori Kafati — Rails Developer" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : PORTFOLIO[:bio] %>">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="icon" href="/icon.png" type="image/png">
+
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="bg-zinc-950 text-zinc-100 antialiased min-h-screen"
+        data-controller="terminal"
+        data-terminal-active-value="false">
+
+    <%= render "shared/nav" %>
+
+    <main>
+      <%= yield %>
+    </main>
+
+    <%= render "shared/footer" %>
+
+    <%= render "shared/terminal_overlay" %>
+
+  </body>
+</html>

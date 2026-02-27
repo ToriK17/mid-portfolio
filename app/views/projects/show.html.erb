@@ -1,0 +1,48 @@
+<% content_for :title, @project.title %>
+<% content_for :description, @project.description %>
+
+<section class="max-w-3xl mx-auto px-6 pt-28 pb-24">
+  <%= link_to "&larr; All Projects".html_safe, projects_path,
+      class: "inline-flex items-center gap-2 text-zinc-500 hover:text-green-400 font-mono text-sm transition-colors mb-10" %>
+
+  <div class="flex items-center gap-3 mb-2">
+    <% if @project.featured? %>
+      <span class="text-xs font-mono text-green-400 border border-green-900 px-2 py-0.5 rounded">featured</span>
+    <% end %>
+    <% if @project.status %>
+      <span class="text-xs font-mono text-zinc-600"><%= @project.status %></span>
+    <% end %>
+  </div>
+
+  <h1 class="text-4xl font-bold text-zinc-50 mb-6"><%= @project.title %></h1>
+
+  <p class="text-zinc-300 text-lg leading-relaxed mb-10">
+    <%= @project.long_description.presence || @project.description %>
+  </p>
+
+  <%# Tech stack %>
+  <div class="mb-10">
+    <p class="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-4">Tech Stack</p>
+    <div class="flex flex-wrap gap-2">
+      <% @project.tech_stack.each do |tech| %>
+        <span class="bg-zinc-900 border border-zinc-800 text-zinc-300 font-mono text-sm px-3 py-1.5 rounded">
+          <%= tech %>
+        </span>
+      <% end %>
+    </div>
+  </div>
+
+  <%# Links %>
+  <% if @project.github_url.present? || @project.live_url.present? %>
+    <div class="flex flex-wrap gap-4">
+      <% if @project.github_url.present? %>
+        <%= link_to "View on GitHub &rarr;".html_safe, @project.github_url, target: "_blank", rel: "noopener",
+            class: "bg-green-500 hover:bg-green-400 text-zinc-950 font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm" %>
+      <% end %>
+      <% if @project.live_url.present? %>
+        <%= link_to "Live Demo &rarr;".html_safe, @project.live_url, target: "_blank", rel: "noopener",
+            class: "border border-zinc-700 hover:border-green-500 text-zinc-300 hover:text-green-400 px-5 py-2.5 rounded-lg transition-colors text-sm" %>
+      <% end %>
+    </div>
+  <% end %>
+</section>

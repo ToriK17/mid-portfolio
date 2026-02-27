@@ -1,0 +1,12 @@
+<% content_for :title, "Projects" %>
+<% content_for :description, "Production Rails applications built over 6 years of experience." %>
+
+<section class="max-w-5xl mx-auto px-6 pt-28 pb-24">
+  <p class="font-mono text-green-400 text-xs mb-4 tracking-widest uppercase">Work</p>
+  <h1 class="text-4xl font-bold text-zinc-50 mb-3">Projects</h1>
+  <p class="text-zinc-400 mb-12">Production applications built over 6 years of Rails development.</p>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <%= render @projects %>
+  </div>
+</section>

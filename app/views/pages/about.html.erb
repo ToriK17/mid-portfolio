@@ -1,0 +1,56 @@
+<% content_for :title, "About" %>
+<% content_for :description, PORTFOLIO[:bio] %>
+
+<section class="max-w-5xl mx-auto px-6 pt-28 pb-16">
+  <p class="font-mono text-green-400 text-xs mb-4 tracking-widest uppercase">About</p>
+  <h1 class="text-4xl font-bold text-zinc-50 mb-6"><%= PORTFOLIO[:name] %></h1>
+
+  <div class="grid md:grid-cols-2 gap-12 mb-16">
+    <div>
+      <p class="text-zinc-300 text-lg leading-relaxed mb-4"><%= PORTFOLIO[:bio] %></p>
+      <p class="text-zinc-500 text-sm font-mono"><%= PORTFOLIO[:location] %></p>
+    </div>
+    <div class="space-y-3 text-sm">
+      <a href="mailto:<%= PORTFOLIO[:email] %>"
+         class="flex items-center gap-3 text-zinc-400 hover:text-green-400 transition-colors group">
+        <span class="font-mono text-green-400 group-hover:text-green-300">&gt;</span>
+        <%= PORTFOLIO[:email] %>
+      </a>
+      <a href="<%= PORTFOLIO[:github] %>" target="_blank" rel="noopener"
+         class="flex items-center gap-3 text-zinc-400 hover:text-green-400 transition-colors group">
+        <span class="font-mono text-green-400 group-hover:text-green-300">&gt;</span>
+        GitHub
+      </a>
+      <a href="<%= PORTFOLIO[:linkedin] %>" target="_blank" rel="noopener"
+         class="flex items-center gap-3 text-zinc-400 hover:text-green-400 transition-colors group">
+        <span class="font-mono text-green-400 group-hover:text-green-300">&gt;</span>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<%# Skills Grid %>
+<section class="max-w-5xl mx-auto px-6 pb-24"
+         data-controller="skills">
+  <p class="font-mono text-green-400 text-xs mb-8 tracking-widest uppercase">Skills</p>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <% @skills.each do |category, skill_list| %>
+      <div>
+        <h3 class="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-4">
+          <%= category.to_s.humanize %>
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          <% skill_list.each do |skill| %>
+            <span class="bg-zinc-900 border border-zinc-800 text-zinc-300 font-mono text-xs px-3 py-1.5 rounded
+                         opacity-0 translate-y-2 transition-all duration-300"
+                  data-skills-target="badge">
+              <%= skill[:name] %>
+            </span>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>

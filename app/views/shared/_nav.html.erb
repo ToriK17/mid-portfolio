@@ -1,0 +1,23 @@
+<nav class="fixed top-0 w-full z-40 transition-all duration-300"
+     data-controller="nav"
+     data-nav-target="bar">
+  <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <%= link_to root_path, class: "font-mono text-green-400 font-bold text-lg hover:text-green-300 transition-colors" do %>
+      &gt;_ tori kafati
+    <% end %>
+
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <%= link_to "About",    about_path,    class: nav_link_class(request.path, "/about") %>
+      <%= link_to "Projects", projects_path, class: nav_link_class(request.path, "/projects") %>
+      <%= link_to "Contact",  contact_path,  class: nav_link_class(request.path, "/contact") %>
+    </div>
+
+    <%# Hidden terminal trigger — barely visible until hovered %>
+    <button class="text-zinc-700 hover:text-green-400 transition-colors font-mono text-sm ml-4"
+            data-action="click->terminal#toggle"
+            aria-label="Open terminal easter egg"
+            title="You found it">
+      &gt;_
+    </button>
+  </div>
+</nav>

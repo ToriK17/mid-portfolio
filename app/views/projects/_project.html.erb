@@ -1,0 +1,23 @@
+<article class="group bg-zinc-900 border border-zinc-800 hover:border-green-500/50
+               rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 flex flex-col">
+  <div class="flex items-start justify-between mb-3">
+    <h3 class="text-lg font-semibold text-zinc-50 group-hover:text-green-400 transition-colors leading-snug">
+      <%= link_to project.title, project_path(project) %>
+    </h3>
+    <% if project.featured? %>
+      <span class="shrink-0 ml-3 text-xs font-mono text-green-400 border border-green-900 px-2 py-0.5 rounded">
+        featured
+      </span>
+    <% end %>
+  </div>
+
+  <p class="text-zinc-400 text-sm mb-5 leading-relaxed grow"><%= project.description %></p>
+
+  <div class="flex flex-wrap gap-1.5 mt-auto">
+    <% project.tech_stack.each do |tech| %>
+      <span class="text-xs font-mono bg-zinc-800 text-zinc-400 px-2 py-1 rounded">
+        <%= tech %>
+      </span>
+    <% end %>
+  </div>
+</article>

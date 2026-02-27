@@ -1,0 +1,49 @@
+<% content_for :title, "Contact" %>
+<% content_for :description, "Get in touch with #{PORTFOLIO[:name]}, #{PORTFOLIO[:title]}." %>
+
+<section class="max-w-5xl mx-auto px-6 pt-28 pb-24">
+  <p class="font-mono text-green-400 text-xs mb-4 tracking-widest uppercase">Contact</p>
+  <h1 class="text-4xl font-bold text-zinc-50 mb-4">Let&rsquo;s Work Together</h1>
+  <p class="text-zinc-400 text-lg mb-12 max-w-xl">
+    Currently accepting new opportunities. Whether you have a project in mind or just want to connect, I&rsquo;d love to hear from you.
+  </p>
+
+  <div class="grid md:grid-cols-2 gap-6 max-w-2xl"
+       data-controller="contact-form"
+       data-contact-form-email-value="<%= PORTFOLIO[:email] %>">
+
+    <%# Email card %>
+    <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:border-green-500/50 transition-colors group">
+      <p class="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-2">Email</p>
+      <p class="text-zinc-200 font-mono text-sm mb-4" data-contact-form-target="email">
+        <%= PORTFOLIO[:email] %>
+      </p>
+      <button data-action="click->contact-form#copy"
+              data-contact-form-target="copyBtn"
+              class="text-xs font-mono text-green-400 hover:text-green-300 transition-colors">
+        Copy address
+      </button>
+    </div>
+
+    <%# GitHub card %>
+    <a href="<%= PORTFOLIO[:github] %>" target="_blank" rel="noopener"
+       class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:border-green-500/50 transition-colors block">
+      <p class="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-2">GitHub</p>
+      <p class="text-zinc-200 font-mono text-sm">torikafati</p>
+    </a>
+
+    <%# LinkedIn card %>
+    <a href="<%= PORTFOLIO[:linkedin] %>" target="_blank" rel="noopener"
+       class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:border-green-500/50 transition-colors block">
+      <p class="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-2">LinkedIn</p>
+      <p class="text-zinc-200 font-mono text-sm">torikafati</p>
+    </a>
+
+    <%# Resume card %>
+    <a href="<%= PORTFOLIO[:resume_url] %>" target="_blank"
+       class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:border-green-500/50 transition-colors block">
+      <p class="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-2">Resume</p>
+      <p class="text-zinc-200 font-mono text-sm">Download PDF &rarr;</p>
+    </a>
+  </div>
+</section>

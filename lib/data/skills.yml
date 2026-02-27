@@ -1,0 +1,47 @@
+languages:
+  - name: Ruby
+    level: expert
+  - name: JavaScript
+    level: advanced
+  - name: SQL
+    level: advanced
+  - name: HTML/CSS
+    level: advanced
+  - name: Bash
+    level: intermediate
+
+frameworks:
+  - name: Rails 7
+    level: expert
+  - name: Stimulus.js
+    level: advanced
+  - name: Turbo
+    level: advanced
+  - name: React
+    level: intermediate
+
+databases:
+  - name: PostgreSQL
+    level: expert
+  - name: MySQL
+    level: advanced
+  - name: Redis
+    level: intermediate
+
+devops:
+  - name: Docker
+    level: intermediate
+  - name: GitHub Actions
+    level: advanced
+  - name: Heroku
+    level: advanced
+  - name: AWS
+    level: intermediate
+
+testing:
+  - name: RSpec
+    level: expert
+  - name: Minitest
+    level: advanced
+  - name: Capybara
+    level: advanced
