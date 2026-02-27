@@ -121,7 +121,7 @@ export default class extends Controller {
     return `
 ╔════════════════════════════════════════════════╗
 ║     Tori Kafati's Terminal Portfolio           ║
-║     Ruby on Rails Developer | 6 Years XP      ║
+║     Backend Engineer (Ruby on Rails)           ║
 ║     Built with ☕ and Determination            ║
 ╚════════════════════════════════════════════════╝
 
@@ -135,9 +135,9 @@ export default class extends Controller {
 
   get fileSystem() {
     return {
-      "about.txt": `Ruby on Rails developer with 6 years of experience.\nMom, coder, and coffee enthusiast.\nI build scalable web applications and solve complex problems.\nCurrently accepting new opportunities.`,
-      "skills.txt": `Languages: Ruby, JavaScript, SQL, HTML/CSS, Bash (when panicked)\nFrameworks: Rails 7, Stimulus.js, Turbo, React\nDatabases: PostgreSQL, MySQL, Redis\nDevOps: Docker, GitHub Actions, Heroku, AWS\nTesting: RSpec, Minitest, Capybara\nSecurity: Input validation, XSS prevention, OWASP Top 10`,
-      "contact.txt": `Email: tori@example.com\nGitHub: github.com/torikafati\nLinkedIn: linkedin.com/in/torikafati\nLocation: Remote-first`,
+      "about.txt": `Backend engineer with 6+ years of experience building scalable Ruby on Rails applications.\nExperienced in API design, data modeling, performance optimization, and security-focused systems.\nCurrently building high-volume ingestion and automation workflows in a production security environment.`,
+      "skills.txt": `Core: Ruby, Rails, API design, background processing, data modeling\nFrontend: React, Stimulus, Turbo\nData & Performance: PostgreSQL (index strategy, query tuning), Redis\nCloud & DevOps: Docker, GitHub Actions, AWS, Heroku\nTesting & Quality: RSpec, Minitest, Capybara, CI workflows\nSecurity: Authentication systems, input validation, secure data handling (OWASP principles)`,
+      "contact.txt": `Email: victoriakafati.dev@gmail.com\nGitHub: github.com/torikafati\nLinkedIn: linkedin.com/in/devtorik17\nLocation: Remote (US)`,
       "resume.pdf": "[BINARY FILE - Use /resume to open]",
       ".env": `# Nice try! These are totally real secrets\nDB_PASSWORD="hunter2"\nAPI_KEY="definitely_not_fake_123"\nAWS_SECRET="you_wish"\nADMIN_PASSWORD="password123"\nBITCOIN_WALLET="3FakeWalletAddressNiceT4y"`,
       ".git": "[DIRECTORY]",
@@ -414,12 +414,12 @@ export default class extends Controller {
       },
 
       "/linkedin": () => {
-        window.open("https://linkedin.com/in/torikafati", "_blank")
+        window.open("https://linkedin.com/in/devtorik17", "_blank")
         return "\n[SYSTEM] Opening LinkedIn profile..."
       },
 
       "/github": () => {
-        window.open("https://github.com/torikafati", "_blank")
+        window.open("https://github.com/ToriK17", "_blank")
         return "\n[SYSTEM] Opening GitHub profile..."
       },
 
