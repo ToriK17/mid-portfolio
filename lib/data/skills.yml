@@ -1,47 +1,49 @@
-languages:
+core:
   - name: Ruby
-    level: expert
-  - name: JavaScript
     level: advanced
-  - name: SQL
+  - name: Rails
     level: advanced
-  - name: HTML/CSS
+  - name: REST
     level: advanced
-  - name: Bash
-    level: intermediate
+  - name: Background jobs (Sidekiq)
+    level: advanced
+  - name: Data modeling
+    level: advanced
 
-frameworks:
-  - name: Rails 7
-    level: expert
-  - name: Stimulus.js
+frontend:
+  - name: React
+    level: intermediate
+  - name: Stimulus
     level: advanced
   - name: Turbo
     level: advanced
-  - name: React
-    level: intermediate
+  - name: JavaScript
+    level: advanced
 
 databases:
   - name: PostgreSQL
-    level: expert
-  - name: MySQL
+    level: advanced
+  - name: JSONB
     level: advanced
   - name: Redis
     level: intermediate
+  - name: Performance optimization
+    level: advanced
 
 devops:
   - name: Docker
     level: intermediate
   - name: GitHub Actions
     level: advanced
-  - name: Heroku
+  - name: CI/CD
     level: advanced
   - name: AWS
     level: intermediate
+  - name: Heroku
+    level: advanced
 
 testing:
   - name: RSpec
-    level: expert
-  - name: Minitest
     level: advanced
   - name: Capybara
     level: advanced

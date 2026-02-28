@@ -136,8 +136,8 @@ export default class extends Controller {
   get fileSystem() {
     return {
       "about.txt": `Backend engineer with 6+ years of experience building scalable Ruby on Rails applications.\nExperienced in API design, data modeling, performance optimization, and security-focused systems.\nCurrently building high-volume ingestion and automation workflows in a production security environment.`,
-      "skills.txt": `Core: Ruby, Rails, API design, background processing, data modeling\nFrontend: React, Stimulus, Turbo\nData & Performance: PostgreSQL (index strategy, query tuning), Redis\nCloud & DevOps: Docker, GitHub Actions, AWS, Heroku\nTesting & Quality: RSpec, Minitest, Capybara, CI workflows\nSecurity: Authentication systems, input validation, secure data handling (OWASP principles)`,
-      "contact.txt": `Email: victoriakafati.dev@gmail.com\nGitHub: github.com/torikafati\nLinkedIn: linkedin.com/in/devtorik17\nLocation: Remote (US)`,
+      "skills.txt": `Core: Ruby, Rails, REST, Background jobs (Sidekiq), data modeling\nFrontend: Stimulus, Turbo, JavaScript,React\nDatabases: PostgreSQL, JSONB, Redis, performance optimization\nDevOps: Docker, GitHub Actions, CI/CD, AWS, Heroku\nTesting: RSpec, Minitest, Capybara\nSecurity: Authentication systems, input validation, secure data handling (OWASP principles)`,
+      "contact.txt": `Email: victoriakafati.dev@gmail.com\nGitHub: github.com/ToriK17\nLinkedIn: linkedin.com/in/devtorik17\nLocation: Remote (US)`,
       "resume.pdf": "[BINARY FILE - Use /resume to open]",
       ".env": `# Nice try! These are totally real secrets\nDB_PASSWORD="hunter2"\nAPI_KEY="definitely_not_fake_123"\nAWS_SECRET="you_wish"\nADMIN_PASSWORD="password123"\nBITCOIN_WALLET="3FakeWalletAddressNiceT4y"`,
       ".git": "[DIRECTORY]",
