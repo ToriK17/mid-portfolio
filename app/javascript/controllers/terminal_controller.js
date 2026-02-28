@@ -98,6 +98,19 @@ export default class extends Controller {
     })
     this.resizeObserver.observe(this.containerTarget)
 
+    this.term.attachCustomKeyEventHandler((event) => {
+      if (event.type !== "keydown") return true
+      if (event.key === "`" || event.key === "~") {
+        this.toggle()
+        return false
+      }
+      if (event.key === "Escape") {
+        this.close()
+        return false
+      }
+      return true
+    })
+
     this.terminalInitialized = true
     this.setupShell()
     this.term.focus()
@@ -113,7 +126,8 @@ export default class extends Controller {
     this.isTyping = false
     this.invalidCommandCount = 0
 
-    this.typeText(this.banner(), () => this.showPrompt())
+    this.term.write(this.banner())
+    this.showPrompt()
     this.term.onData(data => this.handleInput(data))
   }
 
@@ -506,6 +520,7 @@ export default class extends Controller {
 
   showPrompt() {
     this.term.write(`\r\n\x1b[32m${this.currentPath} $ \x1b[0m`)
+    this.term.focus()
   }
 
   typeText(text, callback, speed = 5) {
