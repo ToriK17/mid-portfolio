@@ -7,6 +7,6 @@ PORTFOLIO = {
   email:      "victoriakafati.dev@gmail.com",
   github:     "https://github.com/ToriK17",
   linkedin:   "https://linkedin.com/in/devtorik17",
-  resume_url: "/resume.pdf",
+  resume_url: "/victoria-kafati-resume.pdf",
   location:   "Remote (US)"
 }.freeze
