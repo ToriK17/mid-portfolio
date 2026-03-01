@@ -13,7 +13,7 @@ Press `~` anywhere and pretend you’ve hacked the mainframe.
 - **PostgreSQL**  relational & stable
 - **Tailwind CSS** (`tailwindcss-rails`)
 - **Hotwire** (Turbo + Stimulus)
-- **xterm.js** only for the fake hacker terminal
+- **xterm.js** only for the fake hacker terminal in a browser
 - **Propshaft** modern asset pipeline
 - **Solid Queue / Solid Cache** DB-backed jobs and caching, no Redis required
 
