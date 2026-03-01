@@ -330,7 +330,7 @@ export default class extends Controller {
     const malicious = this.isMalicious(input)
     if (malicious) {
       this.invalidCommandCount++
-      this.typeText(`\n🚫 ${malicious.message}`, () => this.showPrompt())
+      this.typeText(`\n[BLOCKED] ${malicious.message}`, () => this.showPrompt())
       return
     }
 
