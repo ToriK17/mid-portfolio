@@ -249,9 +249,9 @@ export default class extends Controller {
   get forbiddenPatterns() {
     return [
       { pattern: /[;&|`]/, message: "Shell injection attempt detected. You good?" },
-      { pattern: /\brm\s+-rf/, message: "🚨 Destructive command blocked. This incident will be reported." },
+      { pattern: /\brm\s+-rf/, message: "Destructive command blocked. This incident will be reported." },
       { pattern: /:(){ :|:& };:/, message: "Fork bomb? Really? This is a portfolio, not a CTF." },
-      { pattern: /\b(wget|curl)\s+http/, message: "🚨 This is a professional portfolio, not a honeypot." },
+      { pattern: /\b(wget|curl)\s+http/, message: "This is a professional portfolio, not a honeypot." },
       { pattern: /\beval\(/, message: "Nice try, but we don't do eval here. It's called boundaries." },
       { pattern: /\bsudo\b/, message: "You're not in the sudoers file. This incident will be reported." },
       { pattern: /\.sh\b/, message: "We don't run shell scripts here. Try LinkedIn." },
