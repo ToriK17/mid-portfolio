@@ -1,0 +1,83 @@
+- title: "E-Commerce Platform"
+  slug: "ecommerce-platform"
+  description: "High-traffic retail application serving 50K+ daily active users with real-time inventory management."
+  long_description: "Built with Rails 7 + React. Features include Stripe payment integration, real-time inventory management via ActionCable, and a 99.9% uptime SLA. Handles flash sales and traffic spikes through aggressive caching with Redis."
+  tech_stack:
+    - Rails 7
+    - React
+    - PostgreSQL
+    - Redis
+    - Stripe
+    - AWS
+  tags:
+    - featured
+    - e-commerce
+  status: production
+  position: 1
+  featured: true
+
+- title: "Real-Time Scheduler"
+  slug: "real-time-scheduler"
+  description: "Calendar application with WebSocket-powered live updates and complex recurring event logic."
+  long_description: "Built with ActionCable + PostgreSQL. Implements WebSocket connections for live collaboration, complex recurring event logic (RRULE spec), and bi-directional calendar sync with Google Calendar and Outlook via OAuth."
+  tech_stack:
+    - Rails 7
+    - ActionCable
+    - PostgreSQL
+    - Stimulus
+  tags:
+    - featured
+    - real-time
+  status: production
+  position: 2
+  featured: true
+
+- title: "HIPAA-Compliant Patient Portal"
+  slug: "hipaa-patient-portal"
+  description: "Secure healthcare application with end-to-end encryption, audit logging, and multi-factor authentication."
+  long_description: "Built with Rails 7 + Devise + Sidekiq. Implements end-to-end encryption for PHI data, full audit logging trail, background job processing for notifications, and TOTP-based multi-factor authentication."
+  tech_stack:
+    - Rails 7
+    - Devise
+    - Sidekiq
+    - PostgreSQL
+    - MFA
+  tags:
+    - featured
+    - healthcare
+    - security
+  status: production
+  position: 3
+  featured: true
+
+- title: "Workflow Automation Tool"
+  slug: "workflow-automation"
+  description: "Internal tooling for processing 10K+ jobs daily via a custom workflow engine."
+  long_description: "A custom Ruby workflow engine that coordinates multi-step background jobs. Processes 10,000+ jobs daily with retry logic, dead letter queues, and a dashboard for monitoring pipeline health."
+  tech_stack:
+    - Ruby
+    - Sidekiq
+    - Redis
+    - PostgreSQL
+  tags:
+    - tooling
+    - automation
+  status: production
+  position: 4
+  featured: false
+
+- title: "CLI Portfolio (This Site's Predecessor)"
+  slug: "cli-portfolio"
+  description: "Browser-based terminal portfolio built with xterm.js — now lives as the easter egg on this site."
+  long_description: "The original portfolio — a fully interactive terminal emulator running in the browser using xterm.js and Ionic. Commands like /about, /skills, ls, cat, and neofetch all worked. Still accessible: press ~ anywhere on this site to try it."
+  tech_stack:
+    - JavaScript
+    - xterm.js
+    - Ionic
+    - HTML/CSS
+  tags:
+    - fun
+    - meta
+  status: archived
+  position: 5
+  featured: false
