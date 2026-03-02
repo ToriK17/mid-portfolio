@@ -1,17 +1,18 @@
-- title: "E-Commerce Platform"
-  slug: "ecommerce-platform"
-  description: "High-traffic retail application serving 50K+ daily active users with real-time inventory management."
-  long_description: "Built with Rails 7 + React. Features include Stripe payment integration, real-time inventory management via ActionCable, and a 99.9% uptime SLA. Handles flash sales and traffic spikes through aggressive caching with Redis."
+- title: "Kafati Art Studio"
+  slug: "kafati-art-studio"
+  description: "Bilingual gallery and portfolio site for a working artist, with a CMS-powered painting collection and embedded video demonstrations."
+  long_description: "Built for my dad — a full artist portfolio with a dynamic painting gallery, biography, process videos, and contact page. Content is managed entirely through Contentful's headless CMS via GraphQL, so the gallery updates without a redeploy. Implemented bilingual support (English/Spanish) using React Context API, and responsive layouts using a custom mobile-detection hook that switches between desktop nav and a mobile side menu. Deployed on the web with native app targets available via Capacitor."
   tech_stack:
-    - Rails 7
     - React
-    - PostgreSQL
-    - Redis
-    - Stripe
-    - AWS
+    - TypeScript
+    - Ionic
+    - Vite
+    - Contentful
+    - Capacitor
   tags:
     - featured
-    - e-commerce
+    - personal
+  live_url: "https://www.kafatiartstudio.com/"
   status: production
   position: 1
   featured: true

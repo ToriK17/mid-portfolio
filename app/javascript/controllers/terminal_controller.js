@@ -157,7 +157,7 @@ export default class extends Controller {
       ".git": "[DIRECTORY]",
       "projects/": {
         "README.md": `# My Projects Portfolio\n\nA collection of production applications I've built over 6 years.\nEach project demonstrates different aspects of my Rails expertise.`,
-        "ecommerce.md": `# E-Commerce Platform\nBuilt with Rails 7 + React\n- 50K+ daily active users\n- Stripe integration\n- Real-time inventory management\n- 99.9% uptime`,
+        "kafati-art-studio.md": `# Kafati Art Studio\nReact + TypeScript + Ionic + Contentful\n- Bilingual (EN/ES) artist portfolio for my dad\n- CMS-powered painting gallery via Contentful GraphQL\n- Embedded video demonstrations\n- Live at kafatiartstudio.com`,
         "scheduler.md": `# Real-Time Scheduler\nActionCable + PostgreSQL\n- WebSocket connections for live updates\n- Complex recurring event logic\n- Calendar sync with Google/Outlook`,
         "healthcare.md": `# HIPAA-Compliant Portal\nRails 7 + Devise + Sidekiq\n- End-to-end encryption\n- Audit logging\n- Background job processing\n- Multi-factor authentication`,
         "automation.rb": `# Workflow Automation Tool\nclass WorkflowEngine\n  def initialize\n    @jobs = []\n  end\n  \n  def execute\n    # Processes 10K+ jobs daily\n  end\nend`,
