@@ -1,12 +1,31 @@
-class Project < ApplicationRecord
-  validates :title, :description, presence: true
-  validates :slug, presence: true, uniqueness: true,
-            format: { with: /\A[a-z0-9-]+\z/, message: "only lowercase letters, numbers, and hyphens" }
+class Project
+  attr_reader :title, :slug, :description, :long_description,
+              :tech_stack, :tags, :status, :position, :featured,
+              :github_url, :live_url
 
-  scope :featured, -> { where(featured: true) }
-  scope :ordered,  -> { order(:position) }
+  def initialize(attrs)
+    @title            = attrs[:title]
+    @slug             = attrs[:slug]
+    @description      = attrs[:description]
+    @long_description = attrs[:long_description]
+    @tech_stack       = Array(attrs[:tech_stack])
+    @tags             = Array(attrs[:tags])
+    @status           = attrs[:status]
+    @position         = attrs[:position].to_i
+    @featured         = attrs[:featured] == true
+    @github_url       = attrs[:github_url]
+    @live_url         = attrs[:live_url]
+  end
+
+  def featured?
+    @featured
+  end
 
   def to_param
     slug
+  end
+
+  def to_partial_path
+    "projects/project"
   end
 end

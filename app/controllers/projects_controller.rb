@@ -1,9 +1,10 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.ordered
+    @projects = all_projects
   end
 
   def show
-    @project = Project.find_by!(slug: params[:id])
+    @project = all_projects.find { |p| p.slug == params[:id] }
+    raise ActionController::RoutingError, "Not Found" unless @project
   end
 end

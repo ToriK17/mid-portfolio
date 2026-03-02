@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   before_action :set_skills
 
-  helper_method :skills
+  helper_method :skills, :all_projects
 
   private
 
@@ -17,5 +17,12 @@ class ApplicationController < ActionController::Base
 
   def skills
     @skills
+  end
+
+  def all_projects
+    @all_projects ||= YAML.safe_load_file(
+      Rails.root.join("lib/data/projects.yml"),
+      symbolize_names: true
+    ).map { |attrs| Project.new(attrs) }
   end
 end
