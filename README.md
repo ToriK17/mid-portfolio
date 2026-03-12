@@ -7,7 +7,7 @@ Press `~` anywhere and pretend you’ve hacked the mainframe.
 
 ---
 
-## Stack (aka: The Adult Choices)
+## Stack
 
 - **Ruby 3.x / Rails 8.1**  because I like living in the present
 - **PostgreSQL**  relational & stable
