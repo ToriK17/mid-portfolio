@@ -17,19 +17,22 @@
   position: 1
   featured: true
 
-- title: "Real-Time Scheduler"
-  slug: "real-time-scheduler"
-  description: "Calendar application with WebSocket-powered live updates and complex recurring event logic."
-  long_description: "Built with ActionCable + PostgreSQL. Implements WebSocket connections for live collaboration, complex recurring event logic (RRULE spec), and bi-directional calendar sync with Google Calendar and Outlook via OAuth."
+- title: "Toknsmith"
+  slug: "toknsmith"
+  description: "A minimal, secure CLI for storing and rotating tokens — so you can stop dreading secret management."
+  long_description: "A CLI-first tool for managing sensitive tokens securely, reliably, and without the pain. Supports login/logout with macOS Keychain storage, external token vaulting with encryption-at-rest, and a full GitHub OAuth browser flow that vaults the access token automatically. Built on a zero-trust, split-responsibility model: the CLI, API, and middleware each handle only what they need to — no plaintext secrets anywhere. Powered by Thor for clean command composition, Bearer Auth over HTTPS, and an external encryption layer so the API never sees raw secrets. Support for token TTLs, OAuth token rotation, and additional VCS providers in progress."
   tech_stack:
-    - Rails 7
-    - ActionCable
-    - PostgreSQL
-    - Stimulus
+    - Ruby
+    - Thor
+    - Rails
+    - macOS Keychain
+    - OAuth 2.0
   tags:
     - featured
-    - real-time
-  status: production
+    - security
+    - tooling
+  github_url: "https://github.com/ToriK17/toknsmith-cli"
+  status: in_progress
   position: 2
   featured: true
 
