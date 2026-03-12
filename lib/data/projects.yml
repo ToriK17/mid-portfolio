@@ -36,20 +36,22 @@
   position: 2
   featured: true
 
-- title: "HIPAA-Compliant Patient Portal"
-  slug: "hipaa-patient-portal"
-  description: "Secure healthcare application with end-to-end encryption, audit logging, and multi-factor authentication."
-  long_description: "Built with Rails 7 + Devise + Sidekiq. Implements end-to-end encryption for PHI data, full audit logging trail, background job processing for notifications, and TOTP-based multi-factor authentication."
+- title: "Void"
+  slug: "void"
+  description: "The digital equivalent of yelling into a pillow — an anonymous venting app that extracts the core subject from your rant and visualizes the collective chaos as a live word cloud."
+  long_description: "Void is a minimalist web app for venting into the abyss. Users submit short text posts which are processed by a local HuggingFace transformer pipeline (via PyCall) that extracts the core subject matter. Extraction runs as an ActiveJob background job so the UI stays snappy. Extracted subjects feed a live-updating word cloud built with React Wordcloud — a real-time window into the collective emotional chaos. It's therapeutic, anonymous, and very unnecessary. Think of it as a screaming room with data viz."
   tech_stack:
+    - React
     - Rails 7
-    - Devise
     - Sidekiq
-    - PostgreSQL
-    - MFA
+    - Tailwind CSS
+    - HuggingFace Transformers
+    - PyCall
   tags:
     - featured
-    - healthcare
-    - security
+    - fun
+    - ai
+  github_url: "https://github.com/ToriK17/Void"
   status: production
   position: 3
   featured: true
