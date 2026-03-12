@@ -74,3 +74,21 @@
   position: 4
   featured: true
 
+- title: "Notion Versioning"
+  slug: "notion-versioning"
+  description: "Automated daily backups of Notion pages to Markdown, committed to Git — because free-tier version history shouldn't be a dealbreaker."
+  long_description: "A lightweight personal tool that exports Notion pages to Markdown and commits them to Git on a daily cron schedule. Reads page URLs from a config file, downloads each via the notion-exporter package, organizes exports into timestamped directories, and auto-commits the diff. Solves a real annoyance: Notion's native version history is limited on free plans, and manual exports are tedious. Git handles the rest — diffs, history, rollbacks."
+  tech_stack:
+    - Node.js
+    - notion-exporter
+    - Bash
+    - cron
+    - Git
+  tags:
+    - tooling
+    - automation
+  github_url: "https://github.com/ToriK17/notion_versioning"
+  status: production
+  position: 5
+  featured: false
+
