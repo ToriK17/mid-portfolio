@@ -17,8 +17,6 @@ Press `~` anywhere and pretend you’ve hacked the mainframe.
 - **Propshaft** modern asset pipeline
 - **Solid Queue / Solid Cache** DB-backed jobs and caching, no Redis required
 
-Just Rails being Rails.
-
 ---
 
 ## Setup
@@ -30,8 +28,6 @@ bundle install
 rails db:create db:migrate db:seed
 bin/dev
 ```
-
-That’s it. No yak shaving ceremony required.
 
 ---
 
