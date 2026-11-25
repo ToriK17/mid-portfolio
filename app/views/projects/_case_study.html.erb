@@ -6,16 +6,16 @@
         case study
       </span>
       <h3 class="text-xl font-semibold text-zinc-50 group-hover:text-green-400 transition-colors leading-snug">
-        <%= link_to project.title, project_path(project) %>
+        <%= link_to case_study.title, project_path(case_study) %>
       </h3>
     </div>
   </div>
 
-  <p class="text-zinc-400 text-sm mb-5 leading-relaxed max-w-3xl"><%= project.description %></p>
+  <p class="text-zinc-400 text-sm mb-5 leading-relaxed max-w-3xl"><%= case_study.description %></p>
 
-  <% if project.sections.any? %>
+  <% if case_study.sections.any? %>
     <div class="flex flex-wrap gap-x-6 gap-y-1 mb-5">
-      <% project.sections.each do |section| %>
+      <% case_study.sections.each do |section| %>
         <span class="text-xs font-mono text-zinc-500">
           <span class="text-green-600">&rsaquo;</span> <%= section[:heading] || section["heading"] %>
         </span>
@@ -24,7 +24,7 @@
   <% end %>
 
   <div class="flex flex-wrap gap-1.5 mt-auto">
-    <% project.tech_stack.each do |tech| %>
+    <% case_study.tech_stack.each do |tech| %>
       <span class="text-xs font-mono bg-zinc-800 text-zinc-400 px-2 py-1 rounded">
         <%= tech %>
       </span>
