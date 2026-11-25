@@ -1,6 +1,8 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = all_projects
+    all = all_projects
+    @case_studies = all.select(&:case_study?)
+    @projects = all.reject(&:case_study?)
   end
 
   def show

@@ -16,9 +16,31 @@
 
   <h1 class="text-4xl font-bold text-zinc-50 mb-6"><%= @project.title %></h1>
 
-  <p class="text-zinc-300 text-lg leading-relaxed mb-10">
-    <%= @project.long_description.presence || @project.description %>
-  </p>
+  <% if @project.case_study? && @project.sections.any? %>
+    <p class="text-zinc-400 text-lg leading-relaxed mb-10"><%= @project.description %></p>
+    <% if @project.long_description.present? %>
+      <p class="text-zinc-300 leading-relaxed mb-12"><%= @project.long_description %></p>
+    <% end %>
+    <div class="space-y-10 mb-10">
+      <% @project.sections.each do |section| %>
+        <div class="border-l-2 border-green-900 pl-6">
+          <p class="text-xs font-mono text-green-400 uppercase tracking-widest mb-1">
+            <%= section[:heading] || section["heading"] %>
+          </p>
+          <p class="text-zinc-400 text-sm italic mb-3">
+            <%= section[:subheading] || section["subheading"] %>
+          </p>
+          <p class="text-zinc-300 leading-relaxed">
+            <%= section[:content] || section["content"] %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p class="text-zinc-300 text-lg leading-relaxed mb-10">
+      <%= @project.long_description.presence || @project.description %>
+    </p>
+  <% end %>
 
   <%# Tech stack %>
   <div class="mb-10">

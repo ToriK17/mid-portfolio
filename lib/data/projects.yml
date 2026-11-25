@@ -1,19 +1,36 @@
-- title: "Kafati Art Studio"
-  slug: "kafati-art-studio"
-  description: "Bilingual gallery and portfolio site for a working artist, with a CMS-powered painting collection and embedded video demonstrations."
-  long_description: "Built for my dad — a full artist portfolio with a dynamic painting gallery, biography, process videos, and contact page. Content is managed entirely through Contentful's headless CMS via GraphQL, so the gallery updates without a redeploy. Implemented bilingual support (English/Spanish) using React Context API, and responsive layouts using a custom mobile-detection hook that switches between desktop nav and a mobile side menu. Deployed on the web with native app targets available via Capacitor."
+- title: "Engineering Reliable AI-Assisted Code Reviews"
+  slug: "ai-code-review"
+  description: "Designing an extensible multi-agent review architecture that combines specialized AI reviewers with deterministic validation, context management, and human engineering judgment."
+  long_description: "A conceptual architecture for making AI code review genuinely useful in production — not just possible. The core problem: a single AI reviewer spread across the full surface of a pull request produces diluted, low-confidence feedback. This system routes diffs to specialized domain agents (security, database patterns, code quality), consolidates findings deterministically, and gates output through validation before surfacing anything to a human reviewer."
   tech_stack:
-    - React
-    - TypeScript
-    - Ionic
-    - Vite
-    - Contentful
-    - Capacitor
+    - AI orchestration
+    - Domain routing
+    - Deterministic validation
+    - Context engineering
+    - Coverage verification
+    - Token efficiency
   tags:
     - featured
-    - personal
-  live_url: "https://www.kafatiartstudio.com/"
-  status: production
+    - case-study
+    - ai
+  case_study: true
+  sections:
+    - heading: "Problem"
+      subheading: "Why isn't running a single AI reviewer against a pull request sufficient?"
+      content: "A single AI reviewer must simultaneously reason about security vulnerabilities, database query patterns, code style, test coverage, and business logic — within a fixed context window. The result is diluted attention: the reviewer either misses domain-specific issues or produces generic, low-confidence feedback. The challenge isn't getting AI to review code. It's making that review reliably useful. A single reviewer also fails silently — there's no structural guarantee it covered the security surface at all."
+    - heading: "Architecture"
+      subheading: "Why separate reviewers into specialized domains?"
+      content: "Domain routing: separate agents handle security, database patterns, and code quality. Each specialist receives only the diff context relevant to its domain — not the full changeset. An orchestrator dispatches diffs to the appropriate agents in parallel, then a consolidation layer deduplicates, ranks by severity, and structures findings for human review. This mirrors how experienced engineering teams structure review in practice: different experts, shared accountability. It also makes the system extensible — adding a new domain means adding a new agent, not reworking the pipeline."
+    - heading: "Tradeoffs"
+      subheading: "How do you balance context consumption, execution cost, and review quality?"
+      content: "Specialized agents consume fewer tokens per review but require more orchestration overhead. Running agents in parallel improves throughput but increases cost and coordination complexity. Too much context risks hallucination and diluted focus; too little risks missing relevant patterns. The system must balance token budget per domain, parallelism strategy, overlap between domain boundaries, and the cost of false positives relative to missed findings. These aren't configuration parameters — they're engineering decisions that require ongoing calibration against real pull request data."
+    - heading: "Reliability"
+      subheading: "How do you detect missing coverage, false positives, and inconsistent agent behavior?"
+      content: "The hardest problem in AI-assisted review isn't generating comments — it's knowing when the system is failing silently. Coverage gaps (a security agent that ignores a raw SQL query), false positives (flagging idiomatic Rails as a vulnerability), and nondeterminism (same diff, different outputs on successive runs) all undermine trust faster than no automation at all. Mitigations include: structural output validation to detect missing domain coverage, confidence thresholds that filter low-signal findings before they reach a reviewer, schema enforcement to ensure consistent output shape, and regression tests against known-good and known-bad diffs."
+    - heading: "Lessons Learned"
+      subheading: "What should remain deterministic rather than delegated to an LLM?"
+      content: "Not everything should be delegated to an LLM. Structural checks (did the security agent produce output?), schema validation, test file detection, routing logic, and severity thresholds should remain deterministic code. LLMs are powerful for domain reasoning but unreliable as infrastructure components — they don't raise exceptions, they just produce plausible-sounding wrong answers. The right mental model: treat AI agents as expert consultants, not as pipeline components. Build deterministic scaffolding around them, validate their output at every boundary, and design for the case where an agent returns nothing useful."
+  status: "conceptual"
   position: 1
   featured: true
 
@@ -36,10 +53,31 @@
   position: 2
   featured: true
 
+- title: "Kafati Art Studio"
+  slug: "kafati-art-studio"
+  description: "Bilingual gallery and portfolio site for a working artist, with a CMS-powered painting collection and embedded video demonstrations."
+  long_description: "Built for my dad — a full artist portfolio with a dynamic painting gallery, biography, process videos, and contact page. Content is managed entirely through Contentful's headless CMS via GraphQL, so the gallery updates without a redeploy. Implemented bilingual support (English/Spanish) using React Context API, and responsive layouts using a custom mobile-detection hook that switches between desktop nav and a mobile side menu. Deployed on the web with native app targets available via Capacitor."
+  tech_stack:
+    - React
+    - TypeScript
+    - GraphQL
+    - Ionic
+    - Vite
+    - Contentful
+    - Capacitor
+  tags:
+    - featured
+    - personal
+  github_url: "https://github.com/ToriK17/art_studio"
+  live_url: "https://www.kafatiartstudio.com/"
+  status: production
+  position: 3
+  featured: true
+
 - title: "Void"
   slug: "void"
   description: "The digital equivalent of yelling into a pillow — an anonymous venting app that extracts the core subject from your rant and visualizes the collective chaos as a live word cloud."
-  long_description: "Void is a minimalist web app for venting into the abyss. Users submit short text posts which are processed by a local HuggingFace transformer pipeline (via PyCall) that extracts the core subject matter. Extraction runs as an ActiveJob background job so the UI stays snappy. Extracted subjects feed a live-updating word cloud built with React Wordcloud — a real-time window into the collective emotional chaos. It's therapeutic, anonymous, and very unnecessary. Think of it as a screaming room with data viz."
+  long_description: "Void is a minimalist web app for venting into the abyss. Users submit short text posts which are processed by a local HuggingFace transformer pipeline (via PyCall) that extracts the core subject matter. Extraction runs as an ActiveJob background job so the UI stays snappy. Extracted subjects feed a live-updating word cloud built with React Wordcloud — a real-time window into the collective emotional chaos. It's therapeutic and anonymous. Think of it as a screaming room with data viz."
   tech_stack:
     - React
     - Rails 7
@@ -53,7 +91,7 @@
     - ai
   github_url: "https://github.com/ToriK17/Void"
   status: production
-  position: 3
+  position: 4
   featured: true
 
 - title: "LittleBridges"
@@ -71,7 +109,7 @@
     - mobile
     - personal
   status: in_progress
-  position: 4
+  position: 5
   featured: true
 
 - title: "Notion Versioning"
@@ -89,6 +127,5 @@
     - automation
   github_url: "https://github.com/ToriK17/notion_versioning"
   status: production
-  position: 5
+  position: 6
   featured: false
-

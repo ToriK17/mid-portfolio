@@ -1,12 +1,22 @@
 <% content_for :title, "Projects" %>
-<% content_for :description, "Production Rails applications built over 6 years of experience." %>
+<% content_for :description, "Full-stack systems, security tooling, and engineering case studies — 6+ years of experience." %>
 
 <section class="max-w-5xl mx-auto px-6 pt-28 pb-24">
   <p class="font-mono text-green-400 text-xs mb-4 tracking-widest uppercase">Work</p>
   <h1 class="text-4xl font-bold text-zinc-50 mb-3">Projects</h1>
-  <p class="text-zinc-400 mb-12">Production applications built over 6 years of Rails development.</p>
+  <p class="text-zinc-400 mb-12">Full-stack systems, security tooling, and AI-assisted engineering — 6+ years of experience.</p>
 
-  <div class="grid md:grid-cols-2 gap-6">
-    <%= render @projects %>
-  </div>
+  <% if @case_studies.any? %>
+    <p class="font-mono text-green-400 text-xs mb-6 tracking-widest uppercase">Engineering Case Studies</p>
+    <div class="grid gap-6 mb-14">
+      <%= render @case_studies %>
+    </div>
+  <% end %>
+
+  <% if @projects.any? %>
+    <p class="font-mono text-green-400 text-xs mb-6 tracking-widest uppercase">Projects</p>
+    <div class="grid md:grid-cols-2 gap-6">
+      <%= render @projects %>
+    </div>
+  <% end %>
 </section>

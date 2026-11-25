@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
   def home
-    @featured_projects = all_projects.select(&:featured?).first(3)
+    all_featured = all_projects.select(&:featured?)
+    @featured_case_studies = all_featured.select(&:case_study?)
+    @featured_projects = all_featured.reject(&:case_study?).first(3)
   end
 
   def about
