@@ -7,7 +7,7 @@ Press `~` anywhere and pretend you’ve hacked the mainframe.
 
 ---
 
-## Stack (aka: The Adult Choices)
+## Stack
 
 - **Ruby 3.x / Rails 8.1**  because I like living in the present
 - **PostgreSQL**  relational & stable
@@ -16,8 +16,6 @@ Press `~` anywhere and pretend you’ve hacked the mainframe.
 - **xterm.js** only for the fake hacker terminal in a browser
 - **Propshaft** modern asset pipeline
 - **Solid Queue / Solid Cache** DB-backed jobs and caching, no Redis required
-
-Just Rails being Rails.
 
 ---
 
@@ -30,8 +28,6 @@ bundle install
 rails db:create db:migrate db:seed
 bin/dev
 ```
-
-That’s it. No yak shaving ceremony required.
 
 ---
 
@@ -159,4 +155,4 @@ Press `~`.
 Pretend you’re in a 2003 hacker film.
 
 Alive for cheap and free for now:
-[text](https://portfolio-5ihm.onrender.com/)
+[check it out](https://portfolio-5ihm.onrender.com/)
